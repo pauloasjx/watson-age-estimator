@@ -30,7 +30,8 @@ React foi utilizado no frontend consumindo a API express. A API Express responde
 ```json
 {
 "VISUAL_RECOGNITION_API_KEY": "YOUR KEY",
-"VISUAL_RECOGNITION_API_VERSION":  "2018-03-19"
+"VISUAL_RECOGNITION_API_VERSION":  "2018-03-19",
+"PORT": "3001"
 }
 ```
 
@@ -39,7 +40,8 @@ React foi utilizado no frontend consumindo a API express. A API Express responde
 ```json
 {
 "VISUAL_RECOGNITION_API_KEY": "SUA CHAVE",
-"VISUAL_RECOGNITION_API_VERSION":  "2018-03-19"
+"VISUAL_RECOGNITION_API_VERSION":  "2018-03-19",
+"PORT": "3001"
 }
 ```
 
