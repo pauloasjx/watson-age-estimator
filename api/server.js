@@ -47,15 +47,17 @@ app.get('/api/v1/photos', (req, res) => {
 app.post('/api/v1/recognize', upload.single('image'), (req, res) => {
   const images_file = req.file.buffer
   recognizer.detectFaces({images_file}, (err, prediction) => {
-    const { faces } = prediction.images[0]
+    if (prediction) {
+      const { faces } = prediction.images[0]
 
-    // Apenas pelo cache, poderia ser armazenamento em banco de dados
-    images.push({
-      image: `data:image/jpeg;charset=utf-8;base64,${Buffer.from(images_file).toString('base64')}`,
-      faces
-    })
+      // Apenas pelo cache, poderia ser armazenamento em banco de dados
+      images.push({
+        image: `data:image/jpeg;charset=utf-8;base64,${Buffer.from(images_file).toString('base64')}`,
+        faces
+      })
 
-    // Manda um json com a demarcação das faces
-    res.send(faces)
+      // Manda um json com a demarcação das faces
+      res.send(faces)
+    } else res.end()
   })
 })
