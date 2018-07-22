@@ -27,7 +27,7 @@ export default (props) => {
       </GridList>
       ) : (
       <Typography variant="title" color="inherit">
-
+        {/* Tipografia removida */}
       </Typography>
     )}
     </div>

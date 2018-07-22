@@ -1,8 +1,6 @@
+/* Imports */
 import React, { Component } from 'react'
 import axios from 'axios'
-
-import PhotoList from '../components/photo-list'
-import Navbar from '../components/navbar'
 
 import { withStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
@@ -10,9 +8,10 @@ import { Button,
          CircularProgress} from '@material-ui/core';
 
 import AddIcon from '@material-ui/icons/Add';
-import CheckIcon from '@material-ui/icons/Check';
-import GithubIcon from '../icons/Github';
 
+import PhotoList from '../components/photolist'
+
+{/* Definição de estilos */}
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -51,6 +50,7 @@ class Home extends Component {
     }
   }
 
+  /* Pega os dados do cache no servidor */
   componentDidMount() {
     axios.get('http://localhost:3001/api/v1/photos')
     .then(resp => resp.data)
@@ -63,6 +63,7 @@ class Home extends Component {
     })
   }
 
+  /* Faz a requisição */
   formChangeHandler = (e) => {
     const file = e.target.files[0]
 

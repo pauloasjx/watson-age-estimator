@@ -8,8 +8,8 @@ import Home from "./pages/home"
 
 const App = () => (
   <Router>
+      {/* Router, poderiam existir mais páginas */}
       <Route exact path="/" component={Home} />
-
   </Router>
 );
 

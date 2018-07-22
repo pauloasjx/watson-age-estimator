@@ -1,3 +1,4 @@
+{/* Navbar removida */}
 import React from 'react'
 
 import { AppBar,

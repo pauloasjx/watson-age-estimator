@@ -14,7 +14,7 @@ import { Stage,
          Image,
          Rect } from 'react-konva'
 
-import FaceList from './face-list'
+import FaceList from './facelist'
 
 const styles = theme => ({
   root: {
