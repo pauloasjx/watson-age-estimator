@@ -18,7 +18,7 @@ export default (props) => {
       {photos.length > 0 ? (
       <GridList cellHeight={180}>
           <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-            <ListSubheader component="div">Last photos</ListSubheader>
+            <ListSubheader component="div">Latest photos</ListSubheader>
           </GridListTile>
           {photos.map(photo => (
               <Photo src={photo.image}
