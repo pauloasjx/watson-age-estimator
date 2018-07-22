@@ -108,7 +108,7 @@ class Photo extends Component {
             </Stage>
             {hover &&
             <GridListTileBar title={`Gender: ${gender.gender.toLowerCase()}`}
-              subtitle={`Idade: ${age.min}-${age.max}`}
+              subtitle={`Age: ${age.min}-${age.max}`}
             />
             }
           </GridListTile>
