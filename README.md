@@ -25,7 +25,7 @@ React foi utilizado no frontend consumindo a API express. A API Express responde
 
 ### Instalation/Instalação (dependencies: Node8)
 
-You need to configure an env.json file in the api / folder as follows:
+<b><p style="color: red">You need to configure an env.json file in the api / folder as follows:</p></b>
 
 ```json
 {
