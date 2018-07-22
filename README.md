@@ -25,6 +25,26 @@ React foi utilizado no frontend consumindo a API express. A API Express responde
 
 ### Instalation/Instalação (dependencies: Node8)
 
+You need to configure an env.json file in the api / folder as follows:
+
+```json
+{
+"VISUAL_RECOGNITION_API_KEY": "YOUR KEY",
+"VISUAL_RECOGNITION_API_VERSION":  "2018-03-19"
+}
+```
+
+É necessário configurar um arquivo env.json na pasta api/ da seguinte forma:
+
+```json
+{
+"VISUAL_RECOGNITION_API_KEY": "SUA CHAVE",
+"VISUAL_RECOGNITION_API_VERSION":  "2018-03-19"
+}
+```
+
+After:
+Depois:
 
 ```bash
 git clone https://github.com/pstwh/watson-age-estimator.git
