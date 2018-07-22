@@ -12,6 +12,9 @@ const env = require('./env.json')
 const storage = multer.memoryStorage()
 const upload = multer({ storage })
 
+// Para o dyno no herokuapp não dormir
+require('heroku-self-ping')("http://agestimator.herokuapp.com");
+
 const app = express()
 app.use(cors())
 
@@ -32,10 +35,8 @@ app.listen(env.PORT, () => {
   console.log(`Servidor iniciado: Porta: ${env.PORT}`)
 })
 
-// Devolve a página estática
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'))
-})
+// Devolve diretório estático
+app.use(express.static(path.join(__dirname, "public")));
 
 // Devolve a variável de cache
 app.get('/api/v1/photos', (req, res) => {
@@ -48,7 +49,7 @@ app.post('/api/v1/recognize', upload.single('image'), (req, res) => {
   recognizer.detectFaces({images_file}, (err, prediction) => {
     const { faces } = prediction.images[0]
 
-    // Apenas pelo cache, poderia ser o armazenamento em banco de dados
+    // Apenas pelo cache, poderia ser armazenamento em banco de dados
     images.push({
       image: `data:image/jpeg;charset=utf-8;base64,${Buffer.from(images_file).toString('base64')}`,
       faces
